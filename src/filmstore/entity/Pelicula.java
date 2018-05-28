@@ -3,7 +3,6 @@ package filmstore.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
-import java.math.BigInteger;
 
 
 /**
@@ -15,10 +14,9 @@ import java.math.BigInteger;
 public class Pelicula implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@Id
 	private long id;
 
-	@Temporal(TemporalType.TIMESTAMP)
+	
 	private Date anio;
 
 	private long cantidad;

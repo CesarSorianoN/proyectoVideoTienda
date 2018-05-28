@@ -3,54 +3,108 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 <f:view>
 	<h:head>
-		<title>a</title>
+		<title><h:outputText value="Principal" /></title>
 
-		<style>
-</style>
 	</h:head>
 	<h:body>
-		<h:form>
-			<table border="3">
-				<tr>
-					<td colspan="4">dfgthyjkl</td>
-				</tr>
-				<tr>
-					<td>agregar</td>
-					<td rowspan="3" colspan="2">lista</td>
-					<td>guardar</td>
-				</tr>
 
-				<tr>
+		<p:layout fullPage="true">
 
-					<td>buscar por costo</td>
-					<td>eliminar</td>
+			<p:layoutUnit position="north" size="100" header="Top"
+				resizable="true" collapsible="true">
 
-				</tr>
 
-				<tr>
 
-					<td> buscar por version</td>
-					<td>editar</td>
+			</p:layoutUnit>
 
-				</tr>
+			<p:layoutUnit position="south" size="100" header="Bottom"
+				resizable="true" collapsible="true">
+				<h:outputText value="South unit content." />
+			</p:layoutUnit>
 
-				
+			<p:layoutUnit position="west" size="200" header="Informacion"
+				resizable="true" collapsible="true">
 
-				<tr>
-					<td>clasificacion</td>
+				<h:form id="form1">
 
-					<td>año</td>
+				</h:form>
 
-					<td>genero</td>
+			</p:layoutUnit>
 
-					<td>titulo</td>
-				</tr>
-			</table>
-		</h:form>
+			<p:layoutUnit position="east" size="200" header="Noticias"
+				resizable="true" collapsible="true" effect="drop">
+
+				<h:form id="form2">
+
+				</h:form>
+
+			</p:layoutUnit>
+
+			<p:layoutUnit position="center">
+
+				<h:form id="form">
+					<p:tabView orientation="center" style="text-align:center">
+
+
+						<p:tab title="Equipo">
+
+							<p:dataGrid var="pelicula" value="#{peliculaBean.listarPelicula}"
+								columns="2" layout="grid" rows="12" paginator="true"
+								id="pelicula"
+								paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+								rowsPerPageTemplate="20,12,16">
+
+
+								<p:panel header="#{pelicula.titulo}" style="text-align:center">
+
+									<h:panelGrid columns="2" style="width:100%">
+
+										<p:outputLabel value="Titulo: " />
+										<p:inputText value="#{pelicula.titulo}"
+											rendered="true" />
+
+										<p:outputLabel value="Cantidad: " />
+										<p:inputText value="#{pelicula.cantidad}"
+											rendered="true" />
+										<p:outputLabel value="Calificacion: " />
+										<p:inputText value="#{pelicula.clasificacion}"
+											rendered="true" />
+
+										<p:outputLabel value="Estado: " />
+										<p:inputText value="#{pelicula.estado}"
+											rendered="true" />
+
+										<p:outputLabel value="Estado: " />
+										<p:inputText value="#{pelicula.estudio}"
+											rendered="true" />
+
+										<p:outputLabel value="Genero: " />
+										<p:inputText value="#{pelicula.genero}"
+											rendered="true" />
+
+										<p:outputLabel value="Precio: " />
+										<p:inputText value="#{pelicula.precio}"
+											rendered="true" />
+
+
+									</h:panelGrid>
+
+								</p:panel>
+							</p:dataGrid>
+						</p:tab>
+					</p:tabView>
+
+
+				</h:form>
+
+			</p:layoutUnit>
+
+		</p:layout>
+
+
 	</h:body>
 </f:view>
 </html>
