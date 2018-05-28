@@ -77,7 +77,7 @@ public class PeliculaDAOImpl implements PeliculaDAO {
 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction t = session.beginTransaction();
-		List lista = session.createQuery("from Pelicula WHERE precio = '" + precio + "'").list();
+		List lista = session.createQuery("from Pelicula WHERE precio = '" + precio).list();
 		t.commit();
 		return lista;
 	}
@@ -116,7 +116,7 @@ public class PeliculaDAOImpl implements PeliculaDAO {
 
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction t = session.beginTransaction();
-		List lista = session.createQuery("from Pelicula WHERE titulo =" + titulo +"'").list();
+		List lista = session.createQuery("from Pelicula WHERE titulo ='" + titulo +"'").list();
 		t.commit();
 		return lista;
 	}

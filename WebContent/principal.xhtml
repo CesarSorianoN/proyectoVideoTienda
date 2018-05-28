@@ -28,20 +28,21 @@
 			<p:layoutUnit position="west" size="200" header="Informacion"
 				resizable="true" collapsible="true">
 
+
 				<h:form id="form1">
 
+
+					<p:panelGrid columns="1">
+						<p:commandButton value="Agregar pelicula"
+							action="#{peliculaBean.prepararAdicionarPelicula}"
+							orientation="center" style="text-align:center" />
+
+					</p:panelGrid>
 				</h:form>
 
 			</p:layoutUnit>
 
-			<p:layoutUnit position="east" size="200" header="Noticias"
-				resizable="true" collapsible="true" effect="drop">
-
-				<h:form id="form2">
-
-				</h:form>
-
-			</p:layoutUnit>
+			
 
 			<p:layoutUnit position="center">
 
@@ -49,7 +50,7 @@
 					<p:tabView orientation="center" style="text-align:center">
 
 
-						<p:tab title="Equipo">
+						<p:tab title="Peliculas">
 
 							<p:dataGrid var="pelicula" value="#{peliculaBean.listarPelicula}"
 								columns="2" layout="grid" rows="12" paginator="true"
@@ -63,31 +64,24 @@
 									<h:panelGrid columns="2" style="width:100%">
 
 										<p:outputLabel value="Titulo: " />
-										<p:inputText value="#{pelicula.titulo}"
-											rendered="true" />
+										<p:inputText value="#{pelicula.titulo}" rendered="true" />
 
 										<p:outputLabel value="Cantidad: " />
-										<p:inputText value="#{pelicula.cantidad}"
-											rendered="true" />
+										<p:inputText value="#{pelicula.cantidad}" rendered="true" />
 										<p:outputLabel value="Calificacion: " />
-										<p:inputText value="#{pelicula.clasificacion}"
-											rendered="true" />
+										<p:inputText value="#{pelicula.clasificacion}" rendered="true" />
 
 										<p:outputLabel value="Estado: " />
-										<p:inputText value="#{pelicula.estado}"
-											rendered="true" />
+										<p:inputText value="#{pelicula.estado}" rendered="true" />
 
 										<p:outputLabel value="Estado: " />
-										<p:inputText value="#{pelicula.estudio}"
-											rendered="true" />
+										<p:inputText value="#{pelicula.estudio}" rendered="true" />
 
 										<p:outputLabel value="Genero: " />
-										<p:inputText value="#{pelicula.genero}"
-											rendered="true" />
+										<p:inputText value="#{pelicula.genero}" rendered="true" />
 
 										<p:outputLabel value="Precio: " />
-										<p:inputText value="#{pelicula.precio}"
-											rendered="true" />
+										<p:inputText value="#{pelicula.precio}" rendered="true" />
 
 
 									</h:panelGrid>
@@ -103,7 +97,7 @@
 			</p:layoutUnit>
 
 		</p:layout>
-
+		
 
 	</h:body>
 </f:view>
