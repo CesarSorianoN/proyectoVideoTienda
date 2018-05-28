@@ -16,12 +16,12 @@ public class Pelicula implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	private String id;
+	private long id;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date anio;
 
-	private BigInteger cantidad;
+	private long cantidad;
 
 	private String clasificacion;
 
@@ -31,21 +31,26 @@ public class Pelicula implements Serializable {
 
 	private String genero;
 
-	private BigInteger precio;
+	private long precio;
 
 	private String titulo;
 
 	public Pelicula() {
 	}
 
-	public String getId() {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", unique = true, nullable = false)
+	public long getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "anio" ,length =19)
 	public Date getAnio() {
 		return this.anio;
 	}
@@ -54,14 +59,16 @@ public class Pelicula implements Serializable {
 		this.anio = anio;
 	}
 
-	public BigInteger getCantidad() {
+	@Column(name = "cantidad", length = 20)
+	public long getCantidad() {
 		return this.cantidad;
 	}
 
-	public void setCantidad(BigInteger cantidad) {
+	public void setCantidad(long cantidad) {
 		this.cantidad = cantidad;
 	}
 
+	@Column(name = "clasificacion", length = 75)
 	public String getClasificacion() {
 		return this.clasificacion;
 	}
@@ -70,6 +77,7 @@ public class Pelicula implements Serializable {
 		this.clasificacion = clasificacion;
 	}
 
+	@Column(name = "estado", length = 5)
 	public String getEstado() {
 		return this.estado;
 	}
@@ -78,6 +86,7 @@ public class Pelicula implements Serializable {
 		this.estado = estado;
 	}
 
+	@Column(name = "estudio", length = 75)
 	public String getEstudio() {
 		return this.estudio;
 	}
@@ -86,6 +95,7 @@ public class Pelicula implements Serializable {
 		this.estudio = estudio;
 	}
 
+	@Column(name = "genero", length = 75)
 	public String getGenero() {
 		return this.genero;
 	}
@@ -94,14 +104,16 @@ public class Pelicula implements Serializable {
 		this.genero = genero;
 	}
 
-	public BigInteger getPrecio() {
+	@Column(name = "precio", length = 20)
+	public long getPrecio() {
 		return this.precio;
 	}
 
-	public void setPrecio(BigInteger precio) {
+	public void setPrecio(long precio) {
 		this.precio = precio;
 	}
 
+	@Column(name = "titulo", length = 75)
 	public String getTitulo() {
 		return this.titulo;
 	}
