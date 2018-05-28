@@ -1,5 +1,6 @@
 package filmstore.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import estructuras.lineales.ListaEnlazadaSimpleRecursiva;
@@ -20,6 +21,16 @@ public interface PeliculaDAO {
 	 
 	
 	public void update(Pelicula pelicula);
+	
+	public List<Pelicula> peliculaPorPrecio(long precio);
+	
+	public List<Pelicula> peliculaPorClasificacion(String clasificacion);
+	
+	public List<Pelicula> peliculaPorAnio(Date anio);
+	
+	public List<Pelicula> peliculaPorGenero(String genero);
+	
+	public List<Pelicula> peliculaPorTitulo(String titulo);
 	
 	
 }
