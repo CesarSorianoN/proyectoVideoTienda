@@ -3,7 +3,6 @@ package filmstore.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 
-
 /**
  * The persistent class for the usuario database table.
  * 
@@ -13,9 +12,9 @@ import javax.persistence.*;
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private String contraseña;
+	private String id;
 
-	private long id;
+	private String contrasenia;
 
 	private String nombre;
 
@@ -24,27 +23,27 @@ public class Usuario implements Serializable {
 	public Usuario() {
 	}
 
-	@Column(name = "contraseña", length = 50)
-	public String getContraseña() {
-		return this.contraseña;
-	}
-
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
-	}
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", unique = true, nullable = false)
-	public long getId() {
+	public String getId() {
 		return this.id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	@Column(name = "nombre", length = 50)
+	@Column(name = "contrasenia")
+	public String getContrasenia() {
+		return this.contrasenia;
+	}
+
+	public void setContrasenia(String contrasenia) {
+		this.contrasenia = contrasenia;
+	}
+
+	@Column(name = "nombre")
 	public String getNombre() {
 		return this.nombre;
 	}
@@ -53,7 +52,7 @@ public class Usuario implements Serializable {
 		this.nombre = nombre;
 	}
 
-	@Column(name = "usuario", length = 50)
+	@Column(name = "usuario")
 	public String getUsuario() {
 		return this.usuario;
 	}

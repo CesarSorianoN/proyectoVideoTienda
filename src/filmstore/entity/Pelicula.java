@@ -3,23 +3,22 @@ package filmstore.entity;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
-
+import java.math.BigInteger;
 
 /**
  * The persistent class for the pelicula database table.
  * 
  */
 @Entity
-@Table(name = "pelicula")
+@Table(name="pelicula")
 public class Pelicula implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private long id;
+	private String id;
 
-	
 	private Date anio;
 
-	private long cantidad;
+	private BigInteger cantidad;
 
 	private String clasificacion;
 
@@ -29,7 +28,7 @@ public class Pelicula implements Serializable {
 
 	private String genero;
 
-	private long precio;
+	private BigInteger precio;
 
 	private String titulo;
 
@@ -39,16 +38,16 @@ public class Pelicula implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", unique = true, nullable = false)
-	public long getId() {
+	public String getId() {
 		return this.id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
+	@Column(name = "anio")
 	@Temporal(TemporalType.TIMESTAMP)
-	@Column(name = "anio" ,length =19)
 	public Date getAnio() {
 		return this.anio;
 	}
@@ -57,16 +56,16 @@ public class Pelicula implements Serializable {
 		this.anio = anio;
 	}
 
-	@Column(name = "cantidad", length = 20)
-	public long getCantidad() {
+	@Column(name = "cantidad")
+	public BigInteger getCantidad() {
 		return this.cantidad;
 	}
 
-	public void setCantidad(long cantidad) {
+	public void setCantidad(BigInteger cantidad) {
 		this.cantidad = cantidad;
 	}
 
-	@Column(name = "clasificacion", length = 75)
+	@Column(name = "clasificacion")
 	public String getClasificacion() {
 		return this.clasificacion;
 	}
@@ -75,7 +74,7 @@ public class Pelicula implements Serializable {
 		this.clasificacion = clasificacion;
 	}
 
-	@Column(name = "estado", length = 5)
+	@Column(name = "estado")
 	public String getEstado() {
 		return this.estado;
 	}
@@ -84,7 +83,7 @@ public class Pelicula implements Serializable {
 		this.estado = estado;
 	}
 
-	@Column(name = "estudio", length = 75)
+	@Column(name = "estudio")
 	public String getEstudio() {
 		return this.estudio;
 	}
@@ -93,7 +92,7 @@ public class Pelicula implements Serializable {
 		this.estudio = estudio;
 	}
 
-	@Column(name = "genero", length = 75)
+	@Column(name = "genero")
 	public String getGenero() {
 		return this.genero;
 	}
@@ -102,16 +101,16 @@ public class Pelicula implements Serializable {
 		this.genero = genero;
 	}
 
-	@Column(name = "precio", length = 20)
-	public long getPrecio() {
+	@Column(name = "precio")
+	public BigInteger getPrecio() {
 		return this.precio;
 	}
 
-	public void setPrecio(long precio) {
+	public void setPrecio(BigInteger precio) {
 		this.precio = precio;
 	}
 
-	@Column(name = "titulo", length = 75)
+	@Column(name = "titulo")
 	public String getTitulo() {
 		return this.titulo;
 	}
