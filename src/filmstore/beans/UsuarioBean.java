@@ -58,7 +58,7 @@ public class UsuarioBean {
 
 	public String adicionarPelicula() {
 		ps.save(usuario);
-		return "principal";
+		return "inicio";
 	}
 
 	public String prepararModificarPelicula() {
