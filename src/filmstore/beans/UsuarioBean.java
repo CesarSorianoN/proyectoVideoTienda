@@ -18,8 +18,8 @@ import filmstore.service.UserService;
 @SessionScoped
 public class UsuarioBean {
 
-	private Usuario usuario;
-	private UserService ps;
+	private Usuario usuario = new Usuario();
+	private UserService ps = new UserService();
 	private String nombre;
 	private String contraseña;
 	private DataModel listarUsuario;
