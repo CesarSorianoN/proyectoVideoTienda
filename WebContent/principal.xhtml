@@ -15,8 +15,7 @@
 
 			<p:layoutUnit position="north" size="100" header="Top"
 				resizable="true" collapsible="true">
-
-
+				<p:graphicImage value="./img/tvbosque1.jpg" width="100%" height="100%"></p:graphicImage>
 
 			</p:layoutUnit>
 
@@ -53,10 +52,10 @@
 						<p:tab title="Peliculas">
 
 							<p:dataGrid var="pelicula" value="#{peliculaBean.listarPelicula}"
-								columns="2" layout="grid" rows="12" paginator="true"
+								columns="2" layout="grid" rows="10" paginator="true"
 								id="pelicula"
 								paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-								rowsPerPageTemplate="20,12,16">
+								rowsPerPageTemplate="10,12,16">
 
 
 								<p:panel header="#{pelicula.titulo}" style="text-align:center">
