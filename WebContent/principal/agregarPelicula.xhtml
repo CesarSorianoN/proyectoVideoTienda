@@ -30,9 +30,17 @@ body {
 							<p:outputLabel value="Cantidad: " />
 							<p:inputNumber value="#{peliculaBean.pelicula.cantidad}"
 								rendered="true" />
-							<p:outputLabel value="Calificacion: " />
-							<p:inputText value="#{peliculaBean.pelicula.clasificacion}"
-								rendered="true" />
+							  <p:outputLabel value="Calificacion: " />
+							  
+							<p:selectOneMenu value="#{peliculaBean.pelicula.cantidad}">
+							<f:selectItem itemLabel="G" itemValue="1" />
+        				    <f:selectItem itemLabel="PG" itemValue="2" />
+          					<f:selectItem itemLabel="14A" itemValue="3" />
+							<f:selectItem itemLabel="18A" itemValue="4" />
+        				    <f:selectItem itemLabel="R" itemValue="5" />
+          					<f:selectItem itemLabel="A" itemValue="6" />
+							
+							</p:selectOneMenu>
 
 							<p:outputLabel value="Estado: " />
 							<p:inputText value="#{peliculaBean.pelicula.estado}"
