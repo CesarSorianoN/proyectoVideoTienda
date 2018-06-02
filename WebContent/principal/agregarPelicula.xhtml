@@ -7,9 +7,16 @@
 <f:view>
 	<h:head>
 		<title><h:outputText value="Agregar pelicula" /></title>
-
+<style type="text/css">
+body {
+	background-image: url('./img/captura3.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+</style>
 	</h:head>
-
 	<body>
 		<h:form>
 			<table align="center">
@@ -21,7 +28,7 @@
 								rendered="true" />
 
 							<p:outputLabel value="Cantidad: " />
-							<p:inputText value="#{peliculaBean.pelicula.cantidad}"
+							<p:inputNumber value="#{peliculaBean.pelicula.cantidad}"
 								rendered="true" />
 							<p:outputLabel value="Calificacion: " />
 							<p:inputText value="#{peliculaBean.pelicula.clasificacion}"
@@ -40,7 +47,7 @@
 								rendered="true" />
 
 							<p:outputLabel value="Precio: " />
-							<p:inputText value="#{peliculaBean.pelicula.precio}"
+							<p:inputNumber value="#{peliculaBean.pelicula.precio}"
 								rendered="true" />
 
 							<p:commandButton value="Guardar"
