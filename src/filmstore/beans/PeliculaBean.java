@@ -151,7 +151,6 @@ public class PeliculaBean {
 	public void buscarPorClasificacion() {
 		List<Pelicula> pelicula = new PeliculaDAOImpl().peliculaPorClasificacion(clasificacion);
 		buscada = new ListDataModel<>(pelicula);
-
 	}
 
 	public void buscarPorAnio() {
