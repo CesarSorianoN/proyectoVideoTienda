@@ -59,7 +59,7 @@ public class PeliculaDAOImpl implements PeliculaDAO {
 	public void remove(Pelicula pelicula) {
 		Session session = HibernateUtil.getSessionFactory().openSession();
 		Transaction t = session.beginTransaction();
-		session.update(pelicula);
+		session.delete(pelicula);
 		t.commit();
 
 	}

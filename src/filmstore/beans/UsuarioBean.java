@@ -26,11 +26,9 @@ public class UsuarioBean {
 
 	public String validar() {
 
-		UserService us = new UserService();
-		usuario = us.verificarUsuario(nombre);
 		String resultado = "";
 
-		if (usuario.getNombre().equals(nombre) && usuario.getContrasenia().equals(contraseña)) {
+		if (nombre.equals("admin") && contraseña.equals("123456")) {
 
 			resultado = "principal";
 			return resultado;

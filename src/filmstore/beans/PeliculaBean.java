@@ -113,12 +113,12 @@ public class PeliculaBean {
 		List<Pelicula> pel = new PeliculaDAOImpl().list();
 		DataModel listaPeliculas = new ListDataModel<>(pel);
 		pelicula = (Pelicula) (listaPeliculas.getRowData());
-		return " ";
+		return "modificarPelicula";
 	}
 
 	public String modificarPelicula() {
 		ps.update(pelicula);
-		return "pagina de retorno";
+		return "principal";
 	}
 
 	public String prepararEliminarPelicula() {
@@ -130,9 +130,8 @@ public class PeliculaBean {
 
 	public String eliminarpelicula() {
 
-		pelicula.setEstado("A");
-		ps.update(pelicula);
-		return "pagina";
+		ps.remove(pelicula);
+		return "inicio";
 	}
 
 	public DataModel<Pelicula> getBuscada() {
