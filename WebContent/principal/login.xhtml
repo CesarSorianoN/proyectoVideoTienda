@@ -20,19 +20,25 @@ body {
 
 	<body>
 		<h:form>
-		
+		<table height="500" width="100%">
+			<tr><td>
+				<table align="center" width="30%" height="30%">
+				<tr><td>
 			<p:panelGrid columns="2">
 			
 				<p:outputLabel value="Usuario: " />
 				<p:inputText value="#{usuarioBean.nombre}" />
 				
-				<p:outputLabel value="Usuario: " />
-				<p:inputText value="#{usuarioBean.contraseña}" />
+				<p:outputLabel value="Contraseña: " />
+				<p:password value="#{usuarioBean.contraseña}" />
 				
 				<p:commandButton value="Siguiente" action="#{usuarioBean.validar}" />
-							
+				<p:commandButton value="Regresar" action="inicio" />
 			</p:panelGrid>
-
+			</td></tr>
+		</table>
+			</td></tr>
+		</table>
 		</h:form>
 	</body>
 </f:view>
