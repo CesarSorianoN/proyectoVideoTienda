@@ -64,10 +64,10 @@ body {
 
 				<h:form id="form">
 					<p:tabView orientation="center" style="text-align:center">
-
-
 						<p:tab title="Peliculas">
-
+						<f:facet name="actions">
+			                 <p:commandButton value="Regresar" action="inicio"/>
+			           </f:facet>
 							<p:dataGrid var="pelicula" value="#{peliculaBean.listarPelicula}"
 								columns="2" layout="grid" rows="10" paginator="true"
 								id="pelicula"
@@ -106,7 +106,6 @@ body {
 											action="#{peliculaBean.eliminarpelicula}" />
 
 									</h:panelGrid>
-
 								</p:panel>
 							</p:dataGrid>
 						</p:tab>
