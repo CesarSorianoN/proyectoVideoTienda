@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<f:view>
+	<h:head>
+		<title><h:outputText value="Principal" /></title>
+		<style type="text/css">
+body {
+	background-image: url('./img/captura3.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+</style>
+	</h:head>
+	<h:body>
+
+		<p:layout fullPage="true">
+
+			<p:layoutUnit position="north" size="100" header="Top"
+				resizable="true" collapsible="true">
+				<p:graphicImage value="./img/tvbosque1.jpg" width="100%" height="100%"></p:graphicImage>
+			</p:layoutUnit>
+
+			<p:layoutUnit  position="south" size="110" header="Bottom"
+				resizable="true" collapsible="true">
+				<table>
+					<tr>
+						<td><p:commandLink>
+				    <p:graphicImage value="./img/clasificacion.jpg" width="100%" height="40%"></p:graphicImage>
+						</p:commandLink></td>
+						<td><p:commandLink>
+				    <p:graphicImage value="./img/anio.jpg" width="100%" height="40%"></p:graphicImage>
+						</p:commandLink></td>
+						<td><p:commandLink>
+				    <p:graphicImage value="./img/genero.jpg" width="100%" height="40%"></p:graphicImage>
+						</p:commandLink></td>
+						<td><p:commandLink actionListener="buscarTitulo.xhtml">
+				    <p:graphicImage value="./img/tiutlo.jpg" width="100%" height="40%"></p:graphicImage>
+						</p:commandLink></td>
+					</tr>
+				</table>
+			</p:layoutUnit>
+
+			<p:layoutUnit position="west" size="200" header="Informacion"
+				resizable="true" collapsible="true">
+
+				<h:form id="form1">
+
+					<p:panelGrid columns="1">
+						<p:commandButton value="Agregar pelicula"
+							action="#{peliculaBean.prepararAdicionarPelicula}"
+							orientation="center" style="text-align:center" />
+
+					</p:panelGrid>
+				</h:form>
+			</p:layoutUnit>
+
+			<p:layoutUnit position="center">
+
+				<h:form id="form">
+					<p:tabView orientation="center" style="text-align:center">
+
+
+						<p:tab title="Peliculas">
+
+							<p:dataGrid var="pelicula" value="#{peliculaBean.listarPelicula}"
+								columns="2" layout="grid" rows="10" paginator="true"
+								id="pelicula"
+								paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+								rowsPerPageTemplate="10,12,16">
+
+
+								<p:panel header="#{pelicula.titulo}" style="text-align:center">
+
+									<h:panelGrid columns="2" style="width:100%">
+
+										<p:outputLabel value="Titulo: " />
+										<p:outputLabel value="#{pelicula.titulo}"/>
+
+										<p:outputLabel value="Cantidad: " />
+										<p:outputText value="#{pelicula.cantidad}"/>
+										
+										<p:outputLabel value="Calificacion: " />
+										<p:outputText value="#{pelicula.clasificacion}"/>
+
+										<p:outputLabel value="Estado: " />
+										<p:outputText value="#{pelicula.estado}"/>
+
+										<p:outputLabel value="Estado: " />
+										<p:outputText value="#{pelicula.estudio}" />
+
+										<p:outputLabel value="Genero: " />
+										<p:outputText value="#{pelicula.genero}"/>
+
+										<p:outputLabel value="Precio: " />
+										<p:outputText value="#{pelicula.precio}"/>
+
+
+									</h:panelGrid>
+
+								</p:panel>
+							</p:dataGrid>
+						</p:tab>
+					</p:tabView>
+
+
+				</h:form>
+
+			</p:layoutUnit>
+
+		</p:layout>
+		
+
+	</h:body>
+</f:view>
+</html>
