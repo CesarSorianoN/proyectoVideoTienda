@@ -1,13 +1,16 @@
 package filmstore.beans;
 
+import java.math.BigInteger;
 import java.util.Date;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 
+import org.apache.log4j.Logger;
 import filmstore.dao.impl.PeliculaDAOImpl;
 import filmstore.entity.Pelicula;
 import filmstore.service.PeliculaService;
@@ -25,6 +28,8 @@ public class PeliculaBean {
 	private Date anio;
 	private String genero;
 	private String titulo;
+	
+	final static Logger log = Logger.getLogger(PeliculaBean.class);
 
 	public Pelicula getPelicula() {
 		return pelicula;
@@ -132,7 +137,7 @@ public class PeliculaBean {
 		Pelicula usuarioTemp = (Pelicula) (peliculas.getRowData());
 		PeliculaService dao = new PeliculaService();
 		dao.remove(usuarioTemp);
-		return "principal";
+		return "inicio";
 	}
 
 	public DataModel<Pelicula> getBuscada() {
@@ -171,5 +176,19 @@ public class PeliculaBean {
 		List<Pelicula> pelicula = new PeliculaDAOImpl().peliculaPorTitulo(titulo);
 		buscada = new ListDataModel<>(pelicula);
 		return "buscarTitulo";
+	}
+	
+	public String rentar() {
+		Pelicula usuarioTemp = (Pelicula) (peliculas.getRowData());
+		BigInteger aux = new BigInteger("0");
+		if(usuarioTemp.getCantidad().equals(aux)) {
+			log.debug("Producto agotado");
+			return "principalUser";
+		}else {
+			PeliculaService dao = new PeliculaService();
+			usuarioTemp.setCantidad(usuarioTemp.getCantidad().subtract(new BigInteger("1")));
+			dao.update(usuarioTemp);
+			return "inicio";
+		}
 	}
 }

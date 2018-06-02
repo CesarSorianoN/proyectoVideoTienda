@@ -95,6 +95,9 @@ body {
 
 										<p:outputLabel value="Precio: " />
 										<p:outputLabel value="#{pelicula.precio}" rendered="true" />
+										
+										<p:commandButton value="Rentar"
+											action="#{peliculaBean.rentar}" />
 									</h:panelGrid>
 								</p:panel>
 							</p:dataGrid>

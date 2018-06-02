@@ -9,7 +9,7 @@
 		<title><h:outputText value="Agregar pelicula" /></title>
 <style type="text/css">
 body {
-	background-image: url('./img/captura3.jpg');
+	background-image: url('../img/captura3.jpg');
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -27,19 +27,15 @@ body {
 							<p:inputText value="#{peliculaBean.pelicula.titulo}"
 								rendered="true" />
 
-							<p:outputLabel value="Cantidad: " />
-							<p:inputNumber value="#{peliculaBean.pelicula.cantidad}"
-								rendered="true" />
 							  <p:outputLabel value="Calificacion: " />
 							  
-							<p:selectOneMenu value="#{peliculaBean.pelicula.cantidad}">
-							<f:selectItem itemLabel="G" itemValue="1" />
-        				    <f:selectItem itemLabel="PG" itemValue="2" />
-          					<f:selectItem itemLabel="14A" itemValue="3" />
-							<f:selectItem itemLabel="18A" itemValue="4" />
-        				    <f:selectItem itemLabel="R" itemValue="5" />
-          					<f:selectItem itemLabel="A" itemValue="6" />
-							
+							<p:selectOneMenu value="#{peliculaBean.pelicula.clasificacion}">
+								<f:selectItem itemLabel="G" itemValue="G" />
+	        				    <f:selectItem itemLabel="PG" itemValue="PG" />
+	          					<f:selectItem itemLabel="14A" itemValue="14A" />
+								<f:selectItem itemLabel="18A" itemValue="18A" />
+	        				    <f:selectItem itemLabel="R" itemValue="R" />
+	          					<f:selectItem itemLabel="A" itemValue="A" />
 							</p:selectOneMenu>
 
 							<p:outputLabel value="Estado: " />
@@ -57,6 +53,11 @@ body {
 							<p:outputLabel value="Precio: " />
 							<p:inputNumber value="#{peliculaBean.pelicula.precio}"
 								rendered="true" />
+								
+							<p:selectOneMenu value="#{peliculaBean.pelicula.cantidad}" style="visibility:hidden">
+								<f:selectItem itemLabel="G" itemValue="1" />
+							</p:selectOneMenu>
+							<p:outputLabel value="Precio: " style="visibility:hidden"/>
 
 							<p:commandButton value="Guardar"
 								action="#{peliculaBean.adicionarPelicula}" />
