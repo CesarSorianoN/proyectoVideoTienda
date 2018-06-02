@@ -39,7 +39,7 @@ body {
 						<td><p:commandLink>
 				    <p:graphicImage value="./img/genero.jpg" width="100%" height="40%"></p:graphicImage>
 						</p:commandLink></td>
-						<td><p:commandLink actionListener="buscarTitulo.xhtml">
+						<td><p:commandLink action="buscarTitulo.xhtml">
 				    <p:graphicImage value="./img/tiutlo.jpg" width="100%" height="40%"></p:graphicImage>
 						</p:commandLink></td>
 					</tr>
@@ -83,23 +83,22 @@ body {
 										<p:outputLabel value="#{pelicula.titulo}"/>
 
 										<p:outputLabel value="Cantidad: " />
-										<p:outputText value="#{pelicula.cantidad}"/>
+										<p:outputLabel value="#{pelicula.cantidad}"/>
 										
 										<p:outputLabel value="Calificacion: " />
-										<p:outputText value="#{pelicula.clasificacion}"/>
+										<p:outputLabel value="#{pelicula.clasificacion}"/>
 
 										<p:outputLabel value="Estado: " />
-										<p:outputText value="#{pelicula.estado}"/>
+										<p:outputLabel value="#{pelicula.estado}"/>
 
 										<p:outputLabel value="Estado: " />
-										<p:outputText value="#{pelicula.estudio}" />
+										<p:outputLabel value="#{pelicula.estudio}" />
 
 										<p:outputLabel value="Genero: " />
-										<p:outputText value="#{pelicula.genero}"/>
+										<p:outputLabel value="#{pelicula.genero}"/>
 
 										<p:outputLabel value="Precio: " />
-										<p:outputText value="#{pelicula.precio}"/>
-
+										<p:outputLabel value="#{pelicula.precio}"/>
 
 									</h:panelGrid>
 
