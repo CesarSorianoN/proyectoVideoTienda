@@ -129,9 +129,10 @@ public class PeliculaBean {
 	}
 
 	public String eliminarpelicula() {
-
-		ps.remove(pelicula);
-		return "inicio";
+		Pelicula usuarioTemp = (Pelicula) (peliculas.getRowData());
+		PeliculaService dao = new PeliculaService();
+		dao.remove(usuarioTemp);
+		return "principal";
 	}
 
 	public DataModel<Pelicula> getBuscada() {
