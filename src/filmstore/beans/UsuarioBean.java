@@ -27,19 +27,14 @@ public class UsuarioBean {
 	public String validar() {
 
 		String resultado = "";
-
 		if (nombre.equals("admin") && contraseña.equals("123456")) {
-
 			resultado = "principal";
 			return resultado;
-
 		}
-
 		else {
 			resultado = "inicio";
 			return resultado;
 		}
-
 	}
 
 	public DataModel<Pelicula> getListarPelicula() {

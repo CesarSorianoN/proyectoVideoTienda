@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<f:view>
+	<h:head>
+		<title><h:outputText value="Principal" /></title>
+			<style type="text/css">
+body {
+	background-image: url('../img/captura3.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+</style>
+	</h:head>
+	<h:body>
+
+		<p:layout fullPage="true">
+
+			<p:layoutUnit position="north" size="100" header="Top"
+				resizable="true" collapsible="true">
+				<p:graphicImage value="../img/tvbosque1.jpg" width="100%"
+					height="90%"></p:graphicImage>
+			</p:layoutUnit>
+
+			<p:layoutUnit position="west" size="310" header="Informacion"
+				resizable="true" collapsible="true">
+
+				<h:form id="form1">
+					<p:panelGrid columns="1" layout="grid">
+						<p:accordionPanel>
+							<p:tab title="Buscar">
+								<h:panelGrid columns="1" cellpadding="1">
+									<p:inputText placeholder="nombre" value="#{peliculaBean.titulo}"/>
+									<p:commandButton value="Buscar" action="#{peliculaBean.buscarPorTitulo}"/>
+									
+									<p:inputText placeholder="Costo" value="#{peliculaBean.precio}"/>
+									<p:commandButton value="Buscar" action="#{peliculaBean.buscarPorPrecio}"/>
+									
+									<p:inputText placeholder="Calificacion" value="#{peliculaBean.clasificacion}"/>
+									<p:commandButton value="Buscar" action="#{peliculaBean.buscarPorClasificacion}"/>
+									
+									<p:inputText placeholder="Año" value="#{peliculaBean.anio}"/>
+									<p:commandButton value="Buscar" action="#{peliculaBean.buscarPorAnio}"/>
+									
+									<p:inputText placeholder="Genero" value="#{peliculaBean.genero}"/>
+									<p:commandButton value="Buscar" action="#{peliculaBean.buscarPorGenero}"/>
+								</h:panelGrid>
+							</p:tab>
+						</p:accordionPanel>
+					</p:panelGrid>
+				</h:form>
+			</p:layoutUnit>
+
+			<p:layoutUnit position="center">
+
+				<h:form id="form">
+					<p:tabView orientation="center" style="text-align:center">
+						<p:tab title="Peliculas">
+						<f:facet name="actions">
+			                 <p:commandButton value="Regresar" action="inicio"/>
+			           </f:facet>
+							<p:dataGrid var="pelicula" value="#{peliculaBean.listarPelicula}"
+								columns="2" layout="grid" rows="10" paginator="true"
+								id="pelicula"
+								paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+								rowsPerPageTemplate="10,12,16">
+
+
+								<p:panel header="#{pelicula.titulo}" style="text-align:center">
+
+									<h:panelGrid columns="2" style="width:100%">
+
+										<p:outputLabel value="Titulo: " />
+										<p:outputLabel value="#{pelicula.titulo}" rendered="true" />
+
+										<p:outputLabel value="Cantidad: " />
+										<p:outputLabel value="#{pelicula.cantidad}" rendered="true" />
+										
+										<p:outputLabel value="Calificacion: " />
+										<p:outputLabel value="#{pelicula.clasificacion}" rendered="true" />
+
+										<p:outputLabel value="Estado: " />
+										<p:outputLabel value="#{pelicula.estado}" rendered="true" />
+
+										<p:outputLabel value="Estado: " />
+										<p:outputLabel value="#{pelicula.estudio}" rendered="true" />
+
+										<p:outputLabel value="Genero: " />
+										<p:outputLabel value="#{pelicula.genero}" rendered="true" />
+
+										<p:outputLabel value="Precio: " />
+										<p:outputLabel value="#{pelicula.precio}" rendered="true" />
+									</h:panelGrid>
+								</p:panel>
+							</p:dataGrid>
+						</p:tab>
+					</p:tabView>
+				</h:form>
+			</p:layoutUnit>
+		</p:layout>
+	</h:body>
+</f:view>
+</html>
