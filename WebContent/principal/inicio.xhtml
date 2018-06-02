@@ -7,19 +7,30 @@
 <f:view>
 	<h:head>
 		<title><h:outputText value="Agregar pelicula" /></title>
-
+	<style type="text/css">
+body {
+	background-image: url('../img/captura3.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+</style>
 	</h:head>
 
 	<body>
 		<h:form>
-
-			<p:panelGrid columns="2">
-
+			<table align="center">
+			<tr>
+				<td>
+			<p:panelGrid columns="3">
 				<p:commandButton value="Administrador" action="login" />
 				<p:commandButton value="Ver peliculas" action="/usuario/usuario" />
-
+				<p:commandButton value="Principal" action="principal" />
 			</p:panelGrid>
-
+			</td>
+			</tr>
+			</table>
 		</h:form>
 	</body>
 </f:view>
