@@ -17,9 +17,9 @@
 				<p:tab title="Peliculas">
 
 					<p:dataGrid var="pelicula" value="#{peliculaBean.buscada}"
-						columns="2" layout="grid" rows="12" paginator="true" id="pelicula"
+						columns="2" layout="grid" rows="8" paginator="true" id="pelicula"
 						paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-						rowsPerPageTemplate="20,12,16">
+						rowsPerPageTemplate="8,12,16">
 
 
 						<p:panel header="#{pelicula.titulo}" style="text-align:center">
@@ -46,15 +46,12 @@
 								<p:outputLabel value="Precio: " />
 								<p:inputText value="#{pelicula.precio}" rendered="true" />
 
-
 							</h:panelGrid>
-
 						</p:panel>
 					</p:dataGrid>
 				</p:tab>
 			</p:tabView>
-
-
+			<p:commandButton value="Cancelar" action="principal" />
 		</h:form>
 
 

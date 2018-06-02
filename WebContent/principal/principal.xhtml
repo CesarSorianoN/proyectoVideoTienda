@@ -36,19 +36,23 @@ body {
 						<p:commandButton value="Agregar pelicula"
 							action="#{peliculaBean.prepararAdicionarPelicula}" />
 
-
 						<p:accordionPanel>
 							<p:tab title="Buscar">
 								<h:panelGrid columns="1" cellpadding="1">
 									<p:inputText placeholder="nombre" value="#{peliculaBean.titulo}"/>
 									<p:commandButton value="Buscar" action="#{peliculaBean.buscarPorTitulo}"/>
 									
-									<p:inputText placeholder="Costo" />
+									<p:inputText placeholder="Costo" value="#{peliculaBean.precio}"/>
 									<p:commandButton value="Buscar" action="#{peliculaBean.buscarPorPrecio}"/>
 									
-									<p:inputText placeholder="Calificacion" action="#{peliculaBean.buscarPorClasificacion}"/>
-									<p:commandButton value="Buscar" />
+									<p:inputText placeholder="Calificacion" value="#{peliculaBean.clasificacion}"/>
+									<p:commandButton value="Buscar" action="#{peliculaBean.buscarPorClasificacion}"/>
 									
+									<p:inputText placeholder="Añio" value="#{peliculaBean.anio}"/>
+									<p:commandButton value="Buscar" action="#{peliculaBean.buscarPorAnio}"/>
+									
+									<p:inputText placeholder="Genero" value="#{peliculaBean.genero}"/>
+									<p:commandButton value="Buscar" action="#{peliculaBean.buscarPorGenero}"/>
 								</h:panelGrid>
 							</p:tab>
 						</p:accordionPanel>
