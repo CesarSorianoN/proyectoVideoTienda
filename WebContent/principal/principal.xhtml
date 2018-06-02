@@ -45,17 +45,14 @@ body {
 									<p:commandButton value="Buscar" action="#{peliculaBean.buscarPorTitulo}"/>
 									
 									<p:inputText placeholder="Costo" />
-									<p:commandButton value="Buscar" />
+									<p:commandButton value="Buscar" action="#{peliculaBean.buscarPorPrecio}"/>
 									
-									<p:inputText placeholder="Calificacion" />
+									<p:inputText placeholder="Calificacion" action="#{peliculaBean.buscarPorClasificacion}"/>
 									<p:commandButton value="Buscar" />
 									
 								</h:panelGrid>
 							</p:tab>
 						</p:accordionPanel>
-
-
-
 					</p:panelGrid>
 				</h:form>
 			</p:layoutUnit>
@@ -111,15 +108,9 @@ body {
 							</p:dataGrid>
 						</p:tab>
 					</p:tabView>
-
-
 				</h:form>
-
 			</p:layoutUnit>
-
 		</p:layout>
-
-
 	</h:body>
 </f:view>
 </html>

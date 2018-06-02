@@ -143,34 +143,33 @@ public class PeliculaBean {
 		this.buscada = buscada;
 	}
 
-	public void buscarPorPrecio() {
+	public String buscarPorPrecio() {
 		List<Pelicula> pelicula = new PeliculaDAOImpl().peliculaPorPrecio(precio);
 		buscada = new ListDataModel<>(pelicula);
-
+		return "buscarTitulo";
 	}
 
-	public void buscarPorClasificacion() {
+	public String buscarPorClasificacion() {
 		List<Pelicula> pelicula = new PeliculaDAOImpl().peliculaPorClasificacion(clasificacion);
 		buscada = new ListDataModel<>(pelicula);
+		return "buscarTitulo";
 	}
 
-	public void buscarPorAnio() {
+	public String buscarPorAnio() {
 		List<Pelicula> pelicula = new PeliculaDAOImpl().peliculaPorAnio(anio);
 		buscada = new ListDataModel<>(pelicula);
-
+		return "buscarTitulo";
 	}
 
-	public void buscarPorGenero() {
+	public String buscarPorGenero() {
 		List<Pelicula> pelicula = new PeliculaDAOImpl().peliculaPorGenero(genero);
 		buscada = new ListDataModel<>(pelicula);
-
+		return "buscarTitulo";
 	}
 
 	public String buscarPorTitulo() {
-		
 		List<Pelicula> pelicula = new PeliculaDAOImpl().peliculaPorTitulo(titulo);
 		buscada = new ListDataModel<>(pelicula);
 		return "buscarTitulo";
-
 	}
 }
