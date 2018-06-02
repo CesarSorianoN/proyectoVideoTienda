@@ -165,10 +165,11 @@ public class PeliculaBean {
 
 	}
 
-	public String getBuscarPorTitulo() {
+	public String buscarPorTitulo() {
+		
 		List<Pelicula> pelicula = new PeliculaDAOImpl().peliculaPorTitulo(titulo);
 		buscada = new ListDataModel<>(pelicula);
-		return "bucarTitulo";
+		return "buscarTitulo";
 
 	}
 }
